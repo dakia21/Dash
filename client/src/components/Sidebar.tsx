@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { LogOut, Search, Plus, MessageCircle, User, Settings as SettingsIcon } from 'lucide-react'
+import { LogOut, Search, MessageCircle, User, Settings as SettingsIcon } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
 import Profile from './Profile'
 import Settings from './Settings'

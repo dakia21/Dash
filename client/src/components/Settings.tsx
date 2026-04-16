@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { X, Palette, Type, Moon, Sun, Volume2, Bell, Shield } from 'lucide-react'
-import { useThemeStore, Theme, ChatColor } from '../store/themeStore'
+import { X, Palette, Type, Moon, Sun, Bell, Shield } from 'lucide-react'
+import { useThemeStore, ChatColor } from '../store/themeStore'
 import './Settings.css'
 
 interface SettingsProps {

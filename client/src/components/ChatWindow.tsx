@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Send, Smile, Paperclip, Mic, Phone, Video, Image as ImageIcon, File, X, Play, Pause } from 'lucide-react'
+import { Send, Smile, Paperclip, Mic, Phone, Video, Image as ImageIcon, File, X, Play } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
 import { useSocket } from '../hooks/useSocket'
 import api from '../api/axios'
@@ -40,7 +40,7 @@ export default function ChatWindow({ chatId }: ChatWindowProps) {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const imageInputRef = useRef<HTMLInputElement>(null)
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
-  const recordingIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const recordingIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const user = useAuthStore(state => state.user)
   const socket = useSocket()
 

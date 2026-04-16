@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { X, Camera, User, Mail, MessageSquare, Settings, LogOut, AtSign } from 'lucide-react'
+import { X, User, Mail, MessageSquare, LogOut, AtSign } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
 import api from '../api/axios'
 import './Profile.css'
