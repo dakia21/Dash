@@ -9,7 +9,10 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://daaash.netlify.app"
+    ],
     methods: ["GET", "POST"]
   }
 });
@@ -22,7 +25,13 @@ const messages = new Map();
 const JWT_SECRET = 'super_secret_jwt_key';
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://daaash.netlify.app"
+  ],
+  credentials: true
+}));
 app.use(express.json({ limit: '50mb' })); // Увеличиваем лимит для base64 файлов
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
