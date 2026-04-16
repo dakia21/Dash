@@ -5,10 +5,7 @@ import { useAuthStore } from '../store/authStore'
 let socket: Socket | null = null
 
 // Автоматически определяем URL WebSocket сервера
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 
-                   (import.meta.env.DEV 
-                     ? 'http://localhost:5001' 
-                     : 'https://your-backend-url.com') // Замените на ваш URL сервера
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'https://dash-qzzz.onrender.com'
 
 export const useSocket = () => {
   const [socketInstance, setSocketInstance] = useState<Socket | null>(null)

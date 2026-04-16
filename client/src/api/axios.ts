@@ -1,11 +1,8 @@
 import axios from 'axios'
 import { useAuthStore } from '../store/authStore'
 
-// Автоматически определяем URL сервера
-const API_URL = import.meta.env.VITE_API_URL || 
-                (import.meta.env.DEV 
-                  ? 'http://localhost:5001/api' 
-                  : 'https://your-backend-url.com/api') // Замените на ваш URL сервера
+// URL сервера
+const API_URL = import.meta.env.VITE_API_URL || 'https://dash-qzzz.onrender.com/api'
 
 const api = axios.create({
   baseURL: API_URL
