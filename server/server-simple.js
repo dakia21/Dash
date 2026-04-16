@@ -11,9 +11,12 @@ const io = socketIo(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://daaash.netlify.app"
+      "http://localhost:4173",
+      "https://daaash.netlify.app",
+      "https://dash-qzzz.onrender.com"
     ],
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
@@ -502,7 +505,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 server.listen(PORT, () => {
   console.log(`🚀 Сервер запущен на порту ${PORT}`);
   console.log(`✅ Работает в режиме in-memory (без MongoDB)`);
